@@ -1,13 +1,25 @@
 package com.example.TicketProducer.model;
 
+import com.rabbitmq.utility.IntAllocator;
+
 import java.io.Serializable;
 
 public class Ticket implements Serializable {
+
+    private Integer id ;
     private String name;
     private String lastName;
     private String mail;
     private Integer ticketNumber;
     private Double price;
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
 
     public String getName() {
         return name;
@@ -49,6 +61,17 @@ public class Ticket implements Serializable {
         this.price = price;
     }
 
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", mail='" + mail + '\'' +
+                ", ticketNumber=" + ticketNumber +
+                ", price=" + price +
+                '}';
+    }
 
 
 }
