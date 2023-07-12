@@ -18,20 +18,29 @@ public class TicketProducer {
     private String routingKey;
 
 
-    @PostConstruct
-    public void init(){
+//    @PostConstruct
+//    public void init(){
+//        Ticket ticket = new Ticket();
+//        ticket.setId(1);
+//        ticket.setName("Test");
+//        ticket.setLastName("Test-LastName");
+//        ticket.setMail("test-mail");
+//        ticket.setPrice(1.1);
+//        ticket.setTicketNumber(1);
+//
+//        sendToQueue(ticket);
+//
+//    }
 
+    public  void ticketCreate()
+    {
         Ticket ticket = new Ticket();
-        ticket.setId(1);
-        ticket.setName("Test");
+        ticket.setName("redis-cache-test-name");
         ticket.setLastName("Test-LastName");
         ticket.setMail("test-mail");
         ticket.setPrice(1.1);
         ticket.setTicketNumber(1);
-
-
         sendToQueue(ticket);
-
     }
 
     public void sendToQueue(Ticket ticket){
